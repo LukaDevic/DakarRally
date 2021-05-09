@@ -7,5 +7,6 @@ namespace Application.Features.Vehicles.Interfaces
     {
         Task<VehicleModel> GetVehicleAsync(int id);
         Task<int> CreateVehicleAsync(VehicleModel vehicle);
+        Task UpdateAsync(VehicleModel vehicle);
     }
 }

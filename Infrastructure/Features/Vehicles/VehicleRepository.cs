@@ -24,12 +24,35 @@ namespace Infrastructure.Features.Vehicles
             return ConvertToModel(entity);
         }
 
-        public async Task<int> CreateVehicleAsync(VehicleModel vehicle)
+        public async Task<int> CreateVehicleAsync(VehicleModel vehicleModel)
         {
-            var entity = CreateDbEntity(vehicle);
+            var entity = CreateDbEntity(vehicleModel);
             await _context.Vehicles.AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity.Id;
+        }
+
+        public async Task UpdateAsync(VehicleModel vehicleModel)
+        {
+            var entity = await _context.Vehicles.SingleOrDefaultAsync(x => x.Id == vehicleModel.Id);
+            if(entity != null)
+            {
+                var typeModel = CreateDbEntity(vehicleModel);
+                Map(typeModel, entity);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        private void Map(VehicleEntity from, VehicleEntity to)
+        {
+            to.TeamName = from.TeamName;
+            to.VehicleType = from.VehicleType;
+            to.VehicleSubType = from.VehicleSubType;
+            to.ManufacturingDate = from.ManufacturingDate;
+            to.Speed = from.Speed;
+            to.RepairmentTime = from.RepairmentTime;
+            to.LightMalfunctionChance = from.LightMalfunctionChance;
+            to.HeavyMalfunctionChance = from.HeavyMalfunctionChance;
         }
 
         private VehicleModel ConvertToModel(VehicleEntity entity)
