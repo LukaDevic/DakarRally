@@ -42,6 +42,15 @@ namespace WebUI.Controllers
             return Ok(race);
         }
 
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteVehicle(int id)
+        {
+            await Mediator.Send(new DeleteVehicle.Command(id));
+            var race = await Mediator.Send(new GetRace.Query());
+            return Ok(race);
+        }
+
         private VehicleModel Map(UpdateVehicleModel updateModel, VehicleModel model)
         {
             model.TeamName = updateModel.TeamName;

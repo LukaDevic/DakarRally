@@ -43,6 +43,16 @@ namespace Infrastructure.Features.Vehicles
             }
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            var entity = await _context.Vehicles.FirstOrDefaultAsync(x => x.Id == id);
+            if(entity != null)
+            {
+                _context.Vehicles.Remove(entity);
+                await _context.SaveChangesAsync();
+            }
+        }
+
         private void Map(VehicleEntity from, VehicleEntity to)
         {
             to.TeamName = from.TeamName;
