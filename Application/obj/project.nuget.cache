@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "iRLwyeEhNaZ1G4TCk/olOuLZkAZAaknVilV7CDwdFXrLadHNyukNA07uvFTf9BhtNO0+grncSxS/t9WDHRgg9w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Luka Devic\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka Devic\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luka Devic\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
