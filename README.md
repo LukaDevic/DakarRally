@@ -20,7 +20,7 @@ The easiest way to get started is:
 
 ### Database Configuration
 
-The template is configured to use an in-memory database by default. This ensures that all users will be able to run the solution without needing to set up additional infrastructure (e.g. SQL Server).
+The template is configured to use an  by default. This ensures that all users will be able to run the solution without needing to set up additional infrastructure (e.g. SQL Server).
 
 If you would like to use SQL Server, you will need to update **WebUI/appsettings.json** as follows:
 
@@ -52,6 +52,25 @@ This layer is Web Api written in ASP.NET Core 5. This layer depends on both the 
 
 ### Api Examples
 
-By runing the application Api Documentation presented by Swagger will open 
+By runing the application Api Documentation presented by Swagger will open. 
+
 ![image](https://user-images.githubusercontent.com/43738975/117586620-99f1ee00-b119-11eb-9f8f-47a3e1b126d5.png)
+
+In current version you will need to have database in SQL server to fully test the Api, in near future you will be able to test it in certain scope with just in-memory database.
+
+Api examples 1: Create Race
+
+In Swagger go to Races endpoints, go to CreateRace endpoint
+
+![image](https://user-images.githubusercontent.com/43738975/117586854-146f3d80-b11b-11eb-8d06-850b80c59d22.png)
+
+Click Try it out and enter the only parameter for this endpoint, the year of the race.
+
+![image](https://user-images.githubusercontent.com/43738975/117586895-61531400-b11b-11eb-9cc2-b482adecde24.png)
+
+Click Execute and you will get response in the form of race object you just created.
+
+![image](https://user-images.githubusercontent.com/43738975/117586936-9f503800-b11b-11eb-9128-d9ae485dae60.png)
+
+
 
