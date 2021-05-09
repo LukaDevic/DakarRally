@@ -16,14 +16,8 @@ namespace WebUI.Controllers
         [Route("")]
         public async Task<IActionResult> AddVehicle(CreateVehicleModel createModel)
         {
-            var model = new VehicleModel 
-            { 
-                TeamName = createModel.TeamName,
-                VehicleType = createModel.VehicleType,
-                VehicleSubType = createModel.VehicleSubType
-            };
-            var id = await Mediator.Send(new CreateVehicleAndAddToRace.Command(model));
-            var race = await Mediator.Send(new GetRace.Query());
+            await Mediator.Send(new CreateVehicleAndAddToRace.Command(MapCreateModel(createModel))); ;
+            var race = await Mediator.Send(new GetRace.Query(createModel.RaceId));
             return Ok(race);
         }
 
@@ -37,8 +31,8 @@ namespace WebUI.Controllers
                 return NotFound();
             }
 
-            await Mediator.Send(new EditVehicle.Command(Map(updateModel, result.Vehicle)));
-            var race = await Mediator.Send(new GetRace.Query());
+            await Mediator.Send(new EditVehicle.Command(MapUpdateModel(updateModel, result.Vehicle)));
+            var race = await Mediator.Send(new GetRace.Query(result.Vehicle.RaceId));
             return Ok(race);
         }
 
@@ -46,12 +40,24 @@ namespace WebUI.Controllers
         [Route("{id}")]
         public async Task<IActionResult> DeleteVehicle(int id)
         {
-            await Mediator.Send(new DeleteVehicle.Command(id));
-            var race = await Mediator.Send(new GetRace.Query());
+            var raceId = await Mediator.Send(new DeleteVehicle.Command(id));
+            var race = await Mediator.Send(new GetRace.Query(raceId));
             return Ok(race);
         }
 
-        private VehicleModel Map(UpdateVehicleModel updateModel, VehicleModel model)
+        private VehicleModel MapCreateModel(CreateVehicleModel createModel)
+        {
+            var model = new VehicleModel
+            {
+                RaceId = createModel.RaceId,
+                TeamName = createModel.TeamName,
+                VehicleType = createModel.VehicleType,
+                VehicleSubType = createModel.VehicleSubType
+            };
+            return model;
+        }
+
+        private VehicleModel MapUpdateModel(UpdateVehicleModel updateModel, VehicleModel model)
         {
             model.TeamName = updateModel.TeamName;
             model.VehicleType = updateModel.VehicleType;

@@ -13,10 +13,18 @@ namespace WebUI.Controllers
         [Route("")]
         public async Task<IActionResult> CreateRace(CreateRaceModel createModel)
         {
-            //TODO: Restriction to disable multiple races creation
             var model = new RaceModel { Year = createModel.Year };
             var id = await Mediator.Send(new CreateRace.Command(model));
-            var raceResult = await Mediator.Send(new GetRace.Query());
+            var raceResult = await Mediator.Send(new GetRace.Query(id));
+            return Ok(raceResult.Race);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> StartRace(int id)
+        {
+            await Mediator.Send(new StartRace.Command(id));
+            var raceResult = await Mediator.Send(new GetRace.Query(id));
             return Ok(raceResult.Race);
         }
     }

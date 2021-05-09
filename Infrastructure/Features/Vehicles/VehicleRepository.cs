@@ -43,14 +43,16 @@ namespace Infrastructure.Features.Vehicles
             }
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task<int> DeleteAsync(int id)
         {
             var entity = await _context.Vehicles.FirstOrDefaultAsync(x => x.Id == id);
-            if(entity != null)
+            var raceId = entity.RaceId;
+            if (entity != null)
             {
                 _context.Vehicles.Remove(entity);
                 await _context.SaveChangesAsync();
             }
+            return raceId;
         }
 
         private void Map(VehicleEntity from, VehicleEntity to)
@@ -72,6 +74,7 @@ namespace Infrastructure.Features.Vehicles
             return new VehicleModel
             {
                 Id = entity.Id,
+                RaceId = entity.Id,
                 TeamName = entity.TeamName,
                 VehicleType = entity.VehicleType,
                 VehicleSubType = entity.VehicleSubType,
@@ -94,7 +97,8 @@ namespace Infrastructure.Features.Vehicles
                         TeamName = vehicle.TeamName,
                         VehicleType = vehicle.VehicleType,
                         VehicleSubType = vehicle.VehicleSubType,
-                        ManufacturingDate = DateTime.Now
+                        ManufacturingDate = DateTime.Now,
+                        RaceId = vehicle.RaceId
                     };
                 case VehicleType.Motorbike:
                     return new MotorbikeEntity
@@ -102,7 +106,8 @@ namespace Infrastructure.Features.Vehicles
                         TeamName = vehicle.TeamName,
                         VehicleType = vehicle.VehicleType,
                         VehicleSubType = vehicle.VehicleSubType,
-                        ManufacturingDate = DateTime.Now
+                        ManufacturingDate = DateTime.Now,
+                        RaceId = vehicle.RaceId
                     };
                 default:
                     return new TruckEntity
@@ -110,7 +115,8 @@ namespace Infrastructure.Features.Vehicles
                         TeamName = vehicle.TeamName,
                         VehicleType = vehicle.VehicleType,
                         VehicleSubType = vehicle.VehicleSubType,
-                        ManufacturingDate = DateTime.Now
+                        ManufacturingDate = DateTime.Now,
+                        RaceId = vehicle.RaceId
                     };
             }
         }

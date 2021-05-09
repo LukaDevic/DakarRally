@@ -1,7 +1,6 @@
 ﻿using Application.Features.Races.Commands;
 using Application.Features.Vehicles.Interfaces;
 using Application.Features.Vehicles.Models;
-using Application.Features.Vehicles.Queries;
 using MediatR;
 using System;
 using System.Threading;
@@ -25,7 +24,6 @@ namespace Application.Features.Vehicles.Commands
             public async Task<Unit> Handle(Command command, CancellationToken cancellationToken)
             {
                 var id = await _repository.CreateVehicleAsync(command.Vehicle);
-                //var vehicle = await _mediator.Send(new GetVehicle.Query(id));
                 await _mediator.Send(new AddVehicleToRace.Command(id));
                 return Unit.Value;
             }

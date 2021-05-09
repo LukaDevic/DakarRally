@@ -8,6 +8,7 @@ namespace Domain.Entities
     {
         [Key]
         public int Id { get; set; }
+        public int RaceId { get; set; }
         public string TeamName { get; set; }
         public VehicleType VehicleType { get; set; }
         public VehicleSubType VehicleSubType { get; set; }

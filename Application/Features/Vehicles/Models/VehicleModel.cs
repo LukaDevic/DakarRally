@@ -6,6 +6,7 @@ namespace Application.Features.Vehicles.Models
     public class VehicleModel
     {
         public int Id { get; set; }
+        public int RaceId { get; set; }
         public string TeamName { get; set; }
         public VehicleType VehicleType { get; set; }
         public VehicleSubType VehicleSubType { get; set; }

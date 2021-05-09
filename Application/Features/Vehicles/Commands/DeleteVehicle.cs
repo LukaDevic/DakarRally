@@ -7,7 +7,7 @@ namespace Application.Features.Vehicles.Commands
 {
     public static class DeleteVehicle
     {
-        public class Handler : IRequestHandler<Command>
+        public class Handler : IRequestHandler<Command, int>
         {
             private readonly IVehicleRepository _repository;
 
@@ -16,14 +16,14 @@ namespace Application.Features.Vehicles.Commands
                 _repository = repository;
             }
 
-            public async Task<Unit> Handle(Command command, CancellationToken cancellationToken)
+            public async Task<int> Handle(Command command, CancellationToken cancellationToken)
             {
-                await _repository.DeleteAsync(command.Id);
-                return Unit.Value;
+                var id = await _repository.DeleteAsync(command.Id);
+                return id;
             }
         }
 
-        public class Command : IRequest
+        public class Command : IRequest<int>
         {
             public Command(int id)
             {

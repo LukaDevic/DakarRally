@@ -6,6 +6,8 @@ namespace WebUI.Features.Vehicles.Models
     public class CreateVehicleModel
     {
         [Required]
+        public int RaceId { get; set; }
+        [Required]
         public string TeamName { get; set; }
         [Required]
         public VehicleType VehicleType { get; set; }

@@ -17,16 +17,24 @@ namespace Application.Features.Races.Queries
                 _repository = repository;
             }
 
-            public async Task<Result> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result> Handle(Query query, CancellationToken cancellationToken)
             {
-                var race = await _repository.GetRaceAsync();
+                var race = await _repository.GetRaceAsync(query.Id);
                 return race != null
                     ? new Result(race)
                     : Result.Empty;
             }
         }
 
-        public class Query : IRequest<Result> {}
+        public class Query : IRequest<Result> 
+        {
+            public Query(int id)
+            {
+                Id = id;
+            }
+
+            public int Id { get; }
+        }
 
         public class Result
         {

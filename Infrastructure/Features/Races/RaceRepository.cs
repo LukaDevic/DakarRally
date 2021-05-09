@@ -17,9 +17,9 @@ namespace Infrastructure.Features.Races
             _context = context;
         }
 
-        public async Task<RaceModel> GetRaceAsync()
+        public async Task<RaceModel> GetRaceAsync(int id)
         {
-            var entity = await GetRace();
+            var entity = await GetRace(id);
             return ConvertToModel(entity);
         }
 
@@ -31,28 +31,41 @@ namespace Infrastructure.Features.Races
             return entity.Id;
         }
 
-        public async Task AddVehicleAsync(int id)
+        public async Task StartRaceAsync(int id)
         {
-            var race = await GetRace();
-            var vehicleEntity = await _context.Vehicles.SingleOrDefaultAsync(x => x.Id == id);
-            race.Vehicles.Add(vehicleEntity);
+            var race = await GetRace(id);
+            race.Started = true;
             await _context.SaveChangesAsync();
         }
 
-        private async Task<RaceEntity> GetRace()
+
+        public async Task AddVehicleAsync(int id)
         {
-            return await _context.Races.Include(x => x.Vehicles).FirstOrDefaultAsync();
+            var vehicleEntity = await _context.Vehicles.SingleOrDefaultAsync(x => x.Id == id);
+            var race = await GetRace(vehicleEntity.RaceId);
+            if (race != null)
+            {
+                race.Vehicles.Add(vehicleEntity);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        private async Task<RaceEntity> GetRace(int id)
+        {
+            return await _context.Races.Include(x => x.Vehicles).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         private RaceModel ConvertToModel(RaceEntity entity)
         {
-            if(entity == null) return new RaceModel();
+            if (entity == null) return new RaceModel();
 
             return new RaceModel
             {
                 Id = entity.Id,
                 Distance = entity.Distance,
-                Vehicles = entity.Vehicles
+                Vehicles = entity.Vehicles,
+                Year = entity.Year,
+                Started = entity.Started,
             };
         }
 
@@ -60,6 +73,7 @@ namespace Infrastructure.Features.Races
         {
             return new RaceEntity
             {
+                Year = race.Year,
                 Vehicles = new List<VehicleEntity>()
             };
         }
