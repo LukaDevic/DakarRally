@@ -1,6 +1,7 @@
 ﻿using Application.Features.Races.Interfaces;
 using Application.Features.Races.Models;
 using Domain.Entities;
+using Domain.Enums;
 using Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -31,12 +32,12 @@ namespace Infrastructure.Features.Races
             return entity.Id;
         }
 
-        public async Task<RaceModel> StartRaceAsync(int id)
+        public async Task<RaceModel> SetRaceStatusAsync(int id, RaceStatus raceStatus)
         {
             var race = await GetRace(id);
             if (race != null)
             {
-                race.Started = true;
+                race.RaceStatus = raceStatus;
                 await _context.SaveChangesAsync();
             }
             return ConvertToModel(race);
@@ -69,7 +70,7 @@ namespace Infrastructure.Features.Races
                 Distance = entity.Distance,
                 Vehicles = entity.Vehicles,
                 Year = entity.Year,
-                Started = entity.Started,
+                RaceStatus = entity.RaceStatus,
             };
         }
 

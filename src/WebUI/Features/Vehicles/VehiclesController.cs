@@ -12,6 +12,22 @@ namespace WebUI.Controllers
     {
         [HttpGet]
         [Route("")]
+        public async Task<IActionResult> GetVehicles([FromQuery] ListParameters parameters)
+        {
+            var result = await Mediator.Send(new GetVehicles.Query
+            {
+                TeamName = parameters.TeamName,
+                VehicleType = parameters.VehicleType,
+                ManufacturingDate = parameters.ManufacturingDate,
+                HeavyMalfunctionOccured = parameters.HeavyMalfunctionOccured,
+                DistanceCoverdInKm = parameters.DistanceCoverdInKm
+            });
+
+            return Ok(result.Vehicles);
+        }
+
+        [HttpGet]
+        [Route("")]
         public async Task<IActionResult> GetVehicleStatistic(int id)
         {
             var result = await Mediator.Send(new GetVehicle.Query(id));

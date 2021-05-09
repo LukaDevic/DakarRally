@@ -5,6 +5,7 @@ using Domain.Enums;
 using Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Features.Vehicles
@@ -18,9 +19,16 @@ namespace Infrastructure.Features.Vehicles
             _context = context;
         }
 
+        public async Task<IEnumerable<VehicleEntity>> GetVehiclesAsync()
+        {
+            //TODO add maping from entity to model
+            return await _context.Vehicles.ToListAsync();
+        }
+
+
         public async Task<VehicleModel> GetVehicleAsync(int id)
         {
-            var entity = await _context.Vehicles.AsNoTracking().SingleOrDefaultAsync(x => x.Id == id);
+            var entity = await _context.Vehicles.SingleOrDefaultAsync(x => x.Id == id);
             return ConvertToModel(entity);
         }
 

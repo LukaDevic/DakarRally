@@ -16,8 +16,9 @@ namespace Application.Features.Leaderboards.Commands
         public class Handler : IRequestHandler<Command, int>
         {
             private readonly ILeaderboardsRepository _repository;
+            private readonly IMediator _mediator;
 
-            public Handler(ILeaderboardsRepository repository)
+            public Handler(ILeaderboardsRepository repository, IMediator mediator)
             {
                 _repository = repository;
             }
@@ -57,9 +58,9 @@ namespace Application.Features.Leaderboards.Commands
                 }
                 return new LeaderboardModel
                 {
-                    Vehicles = Racers.OrderBy(x => x.FinishedRaceInHours)
-                                     .ThenBy(x => x.DistanceCoverdInKm)
-                                     .ThenBy(x => x.FinishedRaceInHours)
+                    Vehicles = Racers.OrderBy(x => x.HeavyMalfunctionOccured)
+                                     .ThenByDescending(x => x.DistanceCoverdInKm)
+                                     .ThenByDescending(x => x.FinishedRaceInHours)
                                      .ToList()
                 };
             }
