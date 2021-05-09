@@ -12,10 +12,4 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Leaderboards\Interfaces\" />
-    <Folder Include="Features\Leaderboards\Models\" />
-    <Folder Include="Features\Leaderboards\Queries\" />
-  </ItemGroup>
-
 </Project>

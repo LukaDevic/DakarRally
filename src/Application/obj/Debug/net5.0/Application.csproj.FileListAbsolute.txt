@@ -36,3 +36,10 @@ C:\Projects\Tasks\DakarRally\src\Application\obj\Debug\net5.0\Application.csproj
 C:\Projects\Tasks\DakarRally\src\Application\obj\Debug\net5.0\Application.dll
 C:\Projects\Tasks\DakarRally\src\Application\obj\Debug\net5.0\ref\Application.dll
 C:\Projects\Tasks\DakarRally\src\Application\obj\Debug\net5.0\Application.pdb
+C:\Projects\Tasks\DakarRally\src\Application\bin\Debug\net5.0\Application.deps.json
+C:\Projects\Tasks\DakarRally\src\Application\bin\Debug\net5.0\Application.dll
+C:\Projects\Tasks\DakarRally\src\Application\bin\Debug\net5.0\ref\Application.dll
+C:\Projects\Tasks\DakarRally\src\Application\bin\Debug\net5.0\Application.pdb
+C:\Projects\Tasks\DakarRally\src\Application\bin\Debug\net5.0\Domain.dll
+C:\Projects\Tasks\DakarRally\src\Application\bin\Debug\net5.0\Domain.pdb
+C:\Projects\Tasks\DakarRally\src\Application\obj\Debug\net5.0\Application.csproj.CopyComplete
