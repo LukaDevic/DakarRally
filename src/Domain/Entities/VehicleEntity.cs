@@ -16,9 +16,11 @@ namespace Domain.Entities
         public int Speed { get; set; }
         public int RepairmentTime { get; set; }
         public double LightMalfunctionChance { get; set; }
+        public int LightMalfunctionsTimesOccured { get; set; }
         public double HeavyMalfunctionChance { get; set; }
-        public int CurrentHourOfTheRace { get; set; }
-        public int CurrentKmCovered { get; set; }
+        public bool HeavyMalfunctionOccured { get; set; }
+        public int FinishedRaceInHours { get; set; }
+        public int DistanceCoverdInKm { get; set; }
 
     }
 }

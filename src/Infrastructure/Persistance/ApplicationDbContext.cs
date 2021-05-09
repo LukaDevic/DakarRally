@@ -11,5 +11,6 @@ namespace Infrastructure.Persistance
 
         public DbSet<RaceEntity> Races { get; set; }
         public DbSet<VehicleEntity> Vehicles { get; set; }
+        public DbSet<LeaderboardEntity> Leaderboards { get; set; }
     }
 }

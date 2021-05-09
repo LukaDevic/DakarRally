@@ -34,8 +34,11 @@ namespace Infrastructure.Features.Races
         public async Task<RaceModel> StartRaceAsync(int id)
         {
             var race = await GetRace(id);
-            race.Started = true;
-            await _context.SaveChangesAsync();
+            if (race != null)
+            {
+                race.Started = true;
+                await _context.SaveChangesAsync();
+            }
             return ConvertToModel(race);
         }
 

@@ -8,10 +8,37 @@ using Application.Features.Vehicles.Queries;
 
 namespace WebUI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class VehiclesController : ApiControllerBase
     {
+        [HttpGet]
+        [Route("")]
+        public async Task<IActionResult> GetVehicleStatistic(int id)
+        {
+            var result = await Mediator.Send(new GetVehicle.Query(id));
+            if (result.IsEmpty)
+            {
+                return NotFound();
+            }
+
+            return Ok(MapToStatistic(result.Vehicle));
+        }
+
+        private VehicleStatisticModel MapToStatistic(VehicleModel vehicle)
+        {
+            return new VehicleStatisticModel
+            {
+                Id = vehicle.Id,
+                TeamName = vehicle.TeamName,
+                VehicleType = vehicle.VehicleType,
+                VehicleSubType = vehicle.VehicleSubType,
+                LightMalfunctionsTimesOccured = vehicle.LightMalfunctionsTimesOccured,
+                HeavyMalfunctionOccured = vehicle.HeavyMalfunctionOccured,
+                FinishedRace = !vehicle.HeavyMalfunctionOccured,
+                FinishedRaceInHours = vehicle.FinishedRaceInHours,
+                DistanceCoverdInKm = vehicle.DistanceCoverdInKm,
+            };
+        }
+
         [HttpPost]
         [Route("")]
         public async Task<IActionResult> AddVehicle(CreateVehicleModel createModel)

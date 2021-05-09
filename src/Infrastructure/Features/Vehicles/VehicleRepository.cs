@@ -82,7 +82,11 @@ namespace Infrastructure.Features.Vehicles
                 Speed = entity.Speed,
                 RepairmentTime = entity.RepairmentTime,
                 LightMalfunctionChance = entity.LightMalfunctionChance,
-                HeavyMalfunctionChance = entity.HeavyMalfunctionChance
+                LightMalfunctionsTimesOccured = entity.LightMalfunctionsTimesOccured,
+                HeavyMalfunctionChance = entity.HeavyMalfunctionChance,
+                HeavyMalfunctionOccured = entity.HeavyMalfunctionOccured,
+                FinishedRaceInHours = entity.FinishedRaceInHours,
+                DistanceCoverdInKm = entity.DistanceCoverdInKm
             };
         }
 

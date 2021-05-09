@@ -1,4 +1,5 @@
-﻿using Application.Features.Races.Commands;
+﻿using Application.Features.Leaderboards.Queries;
+using Application.Features.Races.Commands;
 using Application.Features.Races.Models;
 using Application.Features.Races.Queries;
 using Microsoft.AspNetCore.Mvc;
@@ -23,9 +24,9 @@ namespace WebUI.Controllers
         [Route("{id}")]
         public async Task<IActionResult> StartRace(int id)
         {
-            await Mediator.Send(new StartRace.Command(id));
-            var raceResult = await Mediator.Send(new GetRace.Query(id));
-            return Ok(raceResult.Race);
+            var leaderboardId = await Mediator.Send(new StartRace.Command(id));
+            var result = await Mediator.Send(new GetLeaderboard.Query(leaderboardId));
+            return Ok(result.Leaderboard);
         }
     }
 }

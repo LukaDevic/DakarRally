@@ -1,4 +1,5 @@
-﻿using Application.Features.Races.Interfaces;
+﻿using Application.Features.Leaderboards.Commands;
+using Application.Features.Races.Interfaces;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ namespace Application.Features.Races.Commands
 {
     public static class StartRace
     {
-        public class Handler : IRequestHandler<Command>
+        public class Handler : IRequestHandler<Command, int>
         {
             private readonly IRaceRepository _repository;
             private readonly IMediator _mediator;
@@ -18,15 +19,14 @@ namespace Application.Features.Races.Commands
                 _mediator = mediator;
             }
 
-            public async Task<Unit> Handle(Command command, CancellationToken cancellationToken)
+            public async Task<int> Handle(Command command, CancellationToken cancellationToken)
             {
                 var race = await _repository.StartRaceAsync(command.Id);
-                var int = await _mediator.Send(new CreateLeaderboard.Command(race));
-                return Unit.Value;
+                return await _mediator.Send(new CreateLeaderboard.Command(race));
             }
         }
 
-        public class Command : IRequest
+        public class Command : IRequest<int>
         {
             public int Id { get; }
 

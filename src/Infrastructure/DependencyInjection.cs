@@ -1,5 +1,7 @@
-﻿using Application.Features.Races.Interfaces;
+﻿using Application.Features.Leaderboards.Interfaces;
+using Application.Features.Races.Interfaces;
 using Application.Features.Vehicles.Interfaces;
+using Infrastructure.Features.Leaderboards;
 using Infrastructure.Features.Races;
 using Infrastructure.Features.Vehicles;
 using Infrastructure.Persistance;
@@ -28,6 +30,7 @@ namespace Infrastructure
 
             services.AddScoped<IRaceRepository, RaceRepository>();
             services.AddScoped<IVehicleRepository, VehicleRepository>();
+            services.AddScoped<ILeaderboardsRepository, LeaderboardsRepository>();
 
             return services;
         }

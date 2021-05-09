@@ -7,7 +7,7 @@ namespace Application.Features.Races.Models
     {
         public int Id { get; set; }
         public int Distance { get; set; }
-        public ICollection<VehicleEntity> Vehicles { get; set; }
+        public IEnumerable<VehicleEntity> Vehicles { get; set; }
         public int Year { get; set; }
         public bool Started { get; set; }
     }

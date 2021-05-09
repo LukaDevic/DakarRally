@@ -1,5 +1,11 @@
-﻿using Application.Features.Races.Models;
+﻿using Application.Features.Leaderboards.Interfaces;
+using Application.Features.Leaderboards.Models;
+using Application.Features.Races.Models;
+using Domain.Entities;
 using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,15 +15,53 @@ namespace Application.Features.Leaderboards.Commands
     {
         public class Handler : IRequestHandler<Command, int>
         {
-            public Task<int> Handle(Command command, CancellationToken cancellationToken)
+            private readonly ILeaderboardsRepository _repository;
+
+            public Handler(ILeaderboardsRepository repository)
+            {
+                _repository = repository;
+            }
+
+            public async Task<int> Handle(Command command, CancellationToken cancellationToken)
             {
                 var leaderboard = RunRaceAndCreateLeaderbord(command.Race);
-                throw new System.NotImplementedException();
+                return await _repository.CreateLeaderboard(leaderboard);
             }
 
             private LeaderboardModel RunRaceAndCreateLeaderbord(RaceModel race)
             {
+                var Racers = new List<VehicleEntity>();
+                foreach (var vehicle in race.Vehicles)
+                {
+                    while(vehicle.DistanceCoverdInKm < race.Distance)
+                    {
+                        vehicle.FinishedRaceInHours++;
+                        var rnd = new Random().Next(1, 101);
+                        if (rnd <= vehicle.HeavyMalfunctionChance)
+                        {
+                            vehicle.HeavyMalfunctionOccured = true;
+                            break;
+                        }
+                        if (rnd <= vehicle.LightMalfunctionChance)
+                        {
+                            vehicle.LightMalfunctionsTimesOccured++;
+                            vehicle.FinishedRaceInHours += vehicle.RepairmentTime;
+                        }
+                        else
+                        {
+                            vehicle.DistanceCoverdInKm += vehicle.Speed;
+                        }
+                    }
 
+                        Racers.Add(vehicle);
+                }
+                return new LeaderboardModel
+                {
+                    Vehicles = Racers.OrderBy(x => x.FinishedRaceInHours)
+                                     .ThenBy(x => x.DistanceCoverdInKm)
+                                     .ThenBy(x => x.FinishedRaceInHours)
+                                     .ToList()
+                };
             }
         }
 
