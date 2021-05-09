@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3ouI0cwZvWigDPQ7NPRYfaivEdOJX8K4WjB4SRKsZJB79j7TeWce7hZK37CXrtEuxi78REnWQMuQUW0n2SF0yg==",
+  "dgSpecHash": "61fxlLBdUdpaTIoyWy1W8eIxAv1fCoSfGp4aPLTH7YzlA2Y/0kuDZnKA8W8K7qicRKks0nGAkrnoCOgxHjM3Uw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Projects\\Tasks\\DakarRally\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Luka Devic\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\Luka Devic\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UwMDqxXBtLd8BuO71NqWM2ZvDyB2MXlGNRjOyxpfUYxg7qc42XKV/wt5vvMcYWeIEXIUq4qlgvtg8Bt/dH4Z0g==",
+  "dgSpecHash": "YA0gv61sf/o3HFIFLixLT9SjQGdeKECbFa5FF2Og0Evi4EVBE+QBNnE+vh0e/GxmiRwFiPpo9PdRdjq/9agVOw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\WebUI\\WebUI.csproj",
+  "projectFilePath": "C:\\Projects\\Tasks\\DakarRally\\WebUI\\WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Luka Devic\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Luka Devic\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",

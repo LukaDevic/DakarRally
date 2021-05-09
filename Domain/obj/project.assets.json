@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Projects\\Tasks\\DakarRally\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Projects\\Tasks\\DakarRally\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\Luka Devic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\obj\\",
+      "outputPath": "C:\\Projects\\Tasks\\DakarRally\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

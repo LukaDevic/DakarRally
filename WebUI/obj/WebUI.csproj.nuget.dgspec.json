@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\WebUI\\WebUI.csproj": {}
+    "C:\\Projects\\Tasks\\DakarRally\\WebUI\\WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Application\\Application.csproj": {
+    "C:\\Projects\\Tasks\\DakarRally\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Projects\\Tasks\\DakarRally\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Application\\Application.csproj",
+        "projectPath": "C:\\Projects\\Tasks\\DakarRally\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Luka Devic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Application\\obj\\",
+        "outputPath": "C:\\Projects\\Tasks\\DakarRally\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -35,8 +35,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\Domain.csproj"
+              "C:\\Projects\\Tasks\\DakarRally\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Projects\\Tasks\\DakarRally\\Domain\\Domain.csproj"
               }
             }
           }
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\Domain.csproj": {
+    "C:\\Projects\\Tasks\\DakarRally\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Projects\\Tasks\\DakarRally\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Projects\\Tasks\\DakarRally\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Luka Devic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\obj\\",
+        "outputPath": "C:\\Projects\\Tasks\\DakarRally\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -136,14 +136,14 @@
         }
       }
     },
-    "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Projects\\Tasks\\DakarRally\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Projects\\Tasks\\DakarRally\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Projects\\Tasks\\DakarRally\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Luka Devic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Projects\\Tasks\\DakarRally\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -167,11 +167,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Application\\Application.csproj"
+              "C:\\Projects\\Tasks\\DakarRally\\Application\\Application.csproj": {
+                "projectPath": "C:\\Projects\\Tasks\\DakarRally\\Application\\Application.csproj"
               },
-              "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Domain\\Domain.csproj"
+              "C:\\Projects\\Tasks\\DakarRally\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Projects\\Tasks\\DakarRally\\Domain\\Domain.csproj"
               }
             }
           }
@@ -218,14 +218,14 @@
         }
       }
     },
-    "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\WebUI\\WebUI.csproj": {
+    "C:\\Projects\\Tasks\\DakarRally\\WebUI\\WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\WebUI\\WebUI.csproj",
+        "projectUniqueName": "C:\\Projects\\Tasks\\DakarRally\\WebUI\\WebUI.csproj",
         "projectName": "WebUI",
-        "projectPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\WebUI\\WebUI.csproj",
+        "projectPath": "C:\\Projects\\Tasks\\DakarRally\\WebUI\\WebUI.csproj",
         "packagesPath": "C:\\Users\\Luka Devic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\WebUI\\obj\\",
+        "outputPath": "C:\\Projects\\Tasks\\DakarRally\\WebUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -249,11 +249,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Application\\Application.csproj"
+              "C:\\Projects\\Tasks\\DakarRally\\Application\\Application.csproj": {
+                "projectPath": "C:\\Projects\\Tasks\\DakarRally\\Application\\Application.csproj"
               },
-              "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Luka Devic\\source\\repos\\DakarRally\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Projects\\Tasks\\DakarRally\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Projects\\Tasks\\DakarRally\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
