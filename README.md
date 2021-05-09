@@ -58,7 +58,7 @@ By runing the application Api Documentation presented by Swagger will open.
 
 In current version you will need to have database in SQL server to fully test the Api, in near future you will be able to test it in certain scope with just in-memory database.
 
-Api examples 1: Create Race
+### Api examples 1: Create Race
 
 In Swagger go to Races endpoints, go to CreateRace endpoint
 
@@ -73,7 +73,7 @@ Click Execute and you will get response in the form of race object you just crea
 ![image](https://user-images.githubusercontent.com/43738975/117586936-9f503800-b11b-11eb-9128-d9ae485dae60.png)
 
 
-Api examples 2: Add Vehicle to Race
+### Api examples 2: Add Vehicle to Race
 
 In Swagger go to Vehicles endpoints, go to AddVehicle endpoint
 
@@ -91,7 +91,7 @@ Click Execute and you will get response in the form of race object you previousl
 
 Besides this you can update, delete specific vehicle, get vehicles by parameters in the mentioned endpoints.
 
-Api examples 3: Start Race
+### Api examples 3: Start Race
 
 In Swagger go to Races endpoints, go to StartRace endpoint
 
@@ -105,7 +105,7 @@ Click Execute and you will get response in the form of leaderboard object which 
 
 After this you can access Leaderboards/GetLeaderboardByType endpoint, and get Vehicle Statistic endpoints.
 
-Api examples 5: Create Race
+### Api examples 4: Create Race
 
 In Swagger go to Races endpoints, go to GetRaceStatus endpoint
 
