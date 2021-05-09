@@ -31,3 +31,27 @@ If you would like to use SQL Server, you will need to update **WebUI/appsettings
 Verify that the **DefaultConnection** connection string within **appsettings.json** points to a valid SQL Server instance. 
 
 When you run the application the database will be automatically created (if necessary) and the latest migrations will be applied.
+
+## Overview
+
+### Domain
+
+This will contain all entities, enums, types and logic specific to the domain layer.
+
+### Application
+
+This layer contains all application logic. It is dependent on the domain layer, but has no dependencies on any other layer or project. This layer defines interfaces that are implemented by outside layers. For example, if the application need to access a RaceRepository service, a new interface would be added to application and an implementation would be created within infrastructure.
+
+### Infrastructure
+
+This layer contains classes for accessing external resources. These classes should be based on interfaces defined within the application layer.
+
+### WebUI
+
+This layer is Web Api written in ASP.NET Core 5. This layer depends on both the Application and Infrastructure layers, however, the dependency on Infrastructure is only to support dependency injection. Therefore only *Startup.cs* should reference Infrastructure.
+
+### Api Examples
+
+By runing the application Api Documentation presented by Swagger will open 
+![image](https://user-images.githubusercontent.com/43738975/117586620-99f1ee00-b119-11eb-9f8f-47a3e1b126d5.png)
+
