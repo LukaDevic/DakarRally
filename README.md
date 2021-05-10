@@ -20,7 +20,7 @@ The easiest way to get started is:
 
 ### Database Configuration
 
-The template is configured to use an  by default. This ensures that all users will be able to run the solution without needing to set up additional infrastructure (e.g. SQL Server).
+The template is configured to use an In Memory Database by default. This ensures that all users will be able to run the solution without needing to set up additional infrastructure (e.g. SQL Server). if this option is used In Memory Database is seeded with one Race with Id = 1 and some sample vehicles. With them you can update, delete vehicles, start the race, get race status etc.
 
 If you would like to use SQL Server, you will need to update **WebUI/appsettings.json** as follows:
 
@@ -55,8 +55,6 @@ This layer is Web Api written in ASP.NET Core 5. This layer depends on both the 
 By runing the application Api Documentation presented by Swagger will open. 
 
 ![image](https://user-images.githubusercontent.com/43738975/117586620-99f1ee00-b119-11eb-9f8f-47a3e1b126d5.png)
-
-In current version you will need to have database in SQL server to fully test the Api, in near future you will be able to test it in certain scope with just in-memory database.
 
 ### Api examples 1: Create Race
 
