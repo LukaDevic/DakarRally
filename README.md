@@ -20,7 +20,7 @@ The easiest way to get started is:
 
 ### Database Configuration
 
-The template is configured to use an In Memory Database by default. This ensures that all users will be able to run the solution without needing to set up additional infrastructure (e.g. SQL Server). if this option is used In Memory Database is seeded with one Race with Id = 1 and some sample vehicles. With them you can update, delete vehicles, start the race, get race status etc.
+The template is configured to use an In Memory Database by default. This ensures that all users will be able to run the solution without needing to set up additional infrastructure (e.g. SQL Server). if this option is used In Memory Database is seeded with one Race with Id = 1 and some sample vehicles. With them you can update, delete vehicles, start the race, get race status etc. For detail explanation of api usage see Api Examples section bellow.
 
 If you would like to use SQL Server, you will need to update **WebUI/appsettings.json** as follows:
 
