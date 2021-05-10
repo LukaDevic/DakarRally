@@ -6,7 +6,7 @@ Simulation of fameous Dakar Rally.
 
 * ASP.NET Core 5
 * [Entity Framework Core 5](https://docs.microsoft.com/en-us/ef/core/)
-* Decouplied in-process of sending of messages from handling messages.
+* Decoupled in-process of sending of messages from handling messages.
 
 ## Getting Started
 
